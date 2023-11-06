@@ -1,21 +1,16 @@
-function Title({ color = 'red', children, hidden = false, name="pol" }) {
-  if (hidden) {
-      return null;
-  }
+import './style.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-  return (<h1 style={{color: color}}> Hello world {name}</h1>);
-}
+import routes from './routes';
+
+// Create a router that uses the client side history strategy for
+const router = createBrowserRouter(routes)
 
 function App() {
-return (
-  <>
-    {/* 
-        La propriété id et data-demo sont passées au composant Title grâce au spread operator.
-        La propriété color est définie dans le composant Title
-     */}
-    <Title color="blue"></Title>
-  </>
-);
+
+  return (
+    <RouterProvider router={router} />
+  );
 }
 
 export default App;
