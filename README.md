@@ -1,3 +1,5 @@
+[![Unit Tests](https://github.com/thib-tm/marvel-app/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/thib-tm/marvel-app/actions/workflows/unit-tests.yml)
+
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=thib-tm_marvel-app&metric=coverage)](https://sonarcloud.io/summary/new_code?id=thib-tm_marvel-app)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=thib-tm_marvel-app&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=thib-tm_marvel-app)
 
@@ -44,8 +46,8 @@ Les projet est composé de 4 pages :
 -   Contact : Page de contact
 
 ```mermaid
-  graph TD;
-    Homme-->/about-->About;
-    Homme-->/contact-->Contact;
-    Homme-->/character-->Character;
+graph LR
+    A(Home) -- /about --> B(About) 
+    A(Home) -- /contat --> B(Contact) 
+    A(Home) -- /character/:id --> B((Character))
 ```
