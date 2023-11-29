@@ -16,6 +16,8 @@ npm install
 npm start
 ```
 
+L'application est accessible à l'adresse http://localhost:3000
+
 ## Test
 
 Execution des tests unitaires en mode watch, c'est à dire que les tests sont relancés à chaque modification de code.
@@ -33,10 +35,17 @@ npm run test:coverage
 ## Conception
 
 Les projet est composé de 4 pages :
+    - Home (page d'acceuil) : Liste des personnages
+    - Character : Page de détail d'un personnage
+    - About : Page d'information sur l'application
+    - Contact : Page de contact
 
-
-
-L'application est accessible à l'adresse http://localhost:3000
-
-Pour lancer les tests unitaires il faut :
-
+```mermaid
+Home;
+Home-->/about;
+Home-->/contact;
+Home-->/character/id;
+/about-->About;
+/contact-->Contact;
+/character/id-->Character;
+```
