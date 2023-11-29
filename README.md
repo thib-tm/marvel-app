@@ -35,10 +35,10 @@ npm run test:coverage
 ## Conception
 
 Les projet est composé de 4 pages :
-    - Home (page d'acceuil) : Liste des personnages
-    - Character : Page de détail d'un personnage
-    - About : Page d'information sur l'application
-    - Contact : Page de contact
+    -   Home (page d'acceuil) : Liste des personnages
+    -   Character : Page de détail d'un personnage
+    -   About : Page d'information sur l'application
+    -   Contact : Page de contact
 
 ```mermaid
 Home;
