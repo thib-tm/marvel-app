@@ -40,10 +40,8 @@ Les projet est composé de 4 pages :
 -   About : Page d'information sur l'application
 -   Contact : Page de contact
 
+```mermaid
 Home;
-Home-->/about;
-Home-->/contact;
-Home-->/character/id;
-/about-->About;
-/contact-->Contact;
-/character/id-->Character;
+    Home-->/about-->About;
+    Home-->/contact-->Contact;
+    Home-->/character/id-->Character;
