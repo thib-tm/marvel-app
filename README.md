@@ -1,15 +1,15 @@
-
-# marvel-app
-
-
 # Marvel App
 
 ## Installation
 
+Récupérer le projet en local et installer les dépendances
+
+```
 git clone url-du-projet
 cd marvel-app
-
 npm install
+```
+
 
 ## Lancement
 
