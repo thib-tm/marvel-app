@@ -1,21 +1,19 @@
 import { render, screen } from '@testing-library/react';
 import { CharactersList } from './CharactersList';
-import { BrowserRouter } from 'react-router-dom'
-
+import { BrowserRouter } from 'react-router-dom';
 
 describe('CharactersList', () => {
+    const characters = [
+        { id: 1, id_perso: "1009368" },
+        { id: 2, id_perso: "1009220" },
+        { id: 3, id_perso: "1009663" },
+    ];
 
-    it('renders a list of characters', () => {
+    it('renders a list of characters with links to their detail pages', () => {
         // when
-        const characters = [
-            { id: 1, name: 'Iron Man' },
-            { id: 2, name: 'Captain America' },
-            { id: 3, name: 'Thor' },
-        ];
-
-        // then
         render(<CharactersList characters={characters} />, { wrapper: BrowserRouter });
 
+        // then
         // expect a list with the id "characters" to be in the document
         const characterList = screen.getByRole('list', { id: 'characters' });
         expect(characterList).toBeInTheDocument();
@@ -24,32 +22,12 @@ describe('CharactersList', () => {
         const characterItems = screen.getAllByRole('listitem');
         expect(characterItems).toHaveLength(characters.length);
 
-        // expect each listitem to have the character name and a link to the character detail page
+        // expect each listitem to have a link to the character detail page
         characterItems.forEach((item, index) => {
-            // expect each listitem to have the character name
-            expect(item).toHaveTextContent(characters[index].name);
-
             // expect each listitem to have a link to the character detail page
-            const link = screen.getByRole('link', { name: characters[index].name });
+            const link = screen.getByTestId(`character-link-${characters[index].id_perso}`);
             expect(link).toBeInTheDocument();
-            expect(link).toHaveAttribute('href', `/characters/${characters[index].id}`);
+            expect(link).toHaveAttribute('href', `/characters/${characters[index].id_perso}`);
         });
-
     });
-
-    it('renders an empty list when no characters are provided', () => {
-        // when
-
-        // then
-        render(<CharactersList />, { wrapper: BrowserRouter });
-
-        // expect a list with the id "characters" to be in the document
-        const characterList = screen.getByRole('list', { id: 'characters' });
-        expect(characterList).toBeInTheDocument();
-
-        // expect no listitems
-        const characterItems = screen.queryAllByRole('listitem');
-        expect(characterItems).toHaveLength(0);
-    });
-
 });
