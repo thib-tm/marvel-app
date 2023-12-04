@@ -10,7 +10,6 @@ function CharacterDetail({ character = {} }) {
             }
             <p>{character.description}</p>
             <strong>{format(new Date(character.modified), 'MMMM d, yyyy')}</strong>
-
         </div>
     );
 }
