@@ -10,7 +10,8 @@ export function CharactersList({ characters = [] }) {
                 return (
                     <li key={character.id}>
                         <Link to={`/characters/${character.id}`} data-testid={`character-link-${character.id}`}>
-                        <strong>{character.name}</strong> - <small>{formattedDate}</small>
+                        {character.name}
+                        {/* <strong>{character.name}</strong> - <small>{formattedDate}</small> */}
                         </Link>
                     </li>
                 );

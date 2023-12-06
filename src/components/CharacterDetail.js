@@ -1,5 +1,3 @@
-import { format } from "date-fns";
-
 function CharacterDetail({ character = {} }) {
     return (
         <div>
@@ -9,7 +7,7 @@ function CharacterDetail({ character = {} }) {
                 character.thumbnail && <img src={`${character.thumbnail.path}/standard_large.${character.thumbnail.extension}`} alt={character.name} />
             }
             <p>{character.description}</p>
-            <strong>{format(new Date(character.modified), 'MMMM d, yyyy')}</strong>
+            {/* <strong>{format(new Date(character.modified), 'MMMM d, yyyy')}</strong> */}
         </div>
     );
 }
