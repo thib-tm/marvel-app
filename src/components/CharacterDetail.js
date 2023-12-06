@@ -1,5 +1,3 @@
-import { format } from "date-fns";
-
 function CharacterDetail({ character = {} }) {
     return (
         <div>
